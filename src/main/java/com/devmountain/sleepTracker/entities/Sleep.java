@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -26,6 +26,14 @@ public class Sleep {
         return hoursOfSleep;
     }
 
+    public Long getSleepId() {
+        return sleepId;
+    }
+
+    public void setSleepId(Long sleepId) {
+        this.sleepId = sleepId;
+    }
+
     public void setHoursOfSleep(Long hoursOfSleep) {
         this.hoursOfSleep = hoursOfSleep;
     }
@@ -36,6 +44,22 @@ public class Sleep {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Timestamp getSleepTime() {
+        return sleepTime;
+    }
+
+    public void setSleepTime(Timestamp sleepTime) {
+        this.sleepTime = sleepTime;
+    }
+
+    public Timestamp getWakeUpTime() {
+        return wakeUpTime;
+    }
+
+    public void setWakeUpTime(Timestamp wakeUpTime) {
+        this.wakeUpTime = wakeUpTime;
     }
 
     public Sleep(Long sleepId, Long hoursOfSleep, Date date, Timestamp sleepTime, Timestamp wakeUpTime) {
@@ -75,10 +99,11 @@ public class Sleep {
             this.date = sleepDto.getDate();
         }
         if (sleepDto.getSleepTime() != null) {
-            this.sleepTime = sleepDto.getSleepTime();
-        }
-        if (sleepDto.getWakeUpTime() != null) {
-            this.wakeUpTime = sleepDto.getWakeUpTime();
-        }
+          this.sleepTime = sleepDto.getSleepTime();
+       }
+       if (sleepDto.getWakeUpTime() != null) {
+          this.wakeUpTime = sleepDto.getWakeUpTime();
+      }
     }
 }
+

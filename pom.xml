@@ -50,6 +50,12 @@
 			<artifactId>spring-security-core</artifactId>
 			<version>5.5.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.qbicc.rt</groupId>
+			<artifactId>qbicc-rt-java.sql</artifactId>
+			<version>17.alpha.0.39</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

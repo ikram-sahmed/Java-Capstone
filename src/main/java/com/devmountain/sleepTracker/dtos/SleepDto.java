@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Data
@@ -30,12 +30,11 @@ public class SleepDto implements Serializable {
         if (sleep.getDate() != null){
             this.date = sleep.getDate();
         }
-        if (sleep.getSleepTime() != null) {
+       if (sleep.getSleepTime() != null) {
             this.sleepTime = sleep.getSleepTime();
-        }
-        if (sleep.getWakeUpTime() != null) {
-            this.wakeUpTime = sleep.getWakeUpTime();
-        }
-    }
-
+     }
+       if (sleep.getWakeUpTime() != null) {
+          this.wakeUpTime = sleep.getWakeUpTime();
+       }
+   }
 }

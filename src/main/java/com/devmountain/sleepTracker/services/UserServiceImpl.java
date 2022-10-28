@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
         if (userOptional.isPresent()){
             if (passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())){
-                response.add("http://localhost:8080/steps.html");
+                response.add("http://localhost:8080/sleep.html");
                 response.add(String.valueOf(userOptional.get().getId()));
             }else{
                 response.add("Username or password is invalid");
