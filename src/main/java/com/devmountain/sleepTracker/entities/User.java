@@ -41,10 +41,20 @@ public class User {
         this.password = password;
     }
 
-    public User(Long id, String username, String password) {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public User(Long id, String username, String password, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.email = email;
     }
 
     public User() {
@@ -57,6 +67,9 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    private String email;
+
     @OneToMany(mappedBy = "user", fetch= FetchType.LAZY, cascade = {CascadeType.PERSIST})
     @JsonManagedReference
     private Set<Sleep> SleepSet = new HashSet<>();
@@ -67,6 +80,9 @@ public class User {
         }
         if (userDto.getPassword() != null){
             this.password = userDto.getPassword();
+        }
+        if (userDto.getEmail() != null){
+            this.email = userDto.getEmail();
         }
 
 }}

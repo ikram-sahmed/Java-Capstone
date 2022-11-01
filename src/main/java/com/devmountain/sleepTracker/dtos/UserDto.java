@@ -17,6 +17,7 @@ public class UserDto implements Serializable {
     private Long id;
     private String username;
     private String password;
+    private String email;
     private Set<SleepDto> sleepDtoSet = new HashSet<>();
 
     public UserDto(User user) {
@@ -28,6 +29,9 @@ public class UserDto implements Serializable {
         }
         if (user.getPassword() != null) {
             this.password = user.getPassword();
+        }
+        if (user.getEmail() != null){
+            this.email = user.getEmail();
         }
 
     }
