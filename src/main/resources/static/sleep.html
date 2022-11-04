@@ -1,10 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily Sleep Tracker</title>
 </head>
 <body>
+<h1>Hey! Let's track your sleep</h1>
+<form>
+    <ul>
+        <li>
+            <label for="time">Time Slept (hours):</label>
+            <input type="text" id="time" name="time">
+        </li>
+        <li>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"
+                   value="">
+        </li>
+        <li class = "button">
+            <input type="submit" name='submit' value='Submit'>
+            <input type="submit" name='graph' value='View Graph'>
+            <input type="submit" name='logout' value='Logout'>
+        </li>
+    </ul>
+</form>
 
 </body>
 </html>
