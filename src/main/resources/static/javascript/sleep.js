@@ -17,6 +17,7 @@ const baseUrl1 = "http://localhost:8080/api/v1/sleep"
 
 const addNewSleepEntry = async (e) => {
     e.preventDefault()
+    console.log("hello")
     let bodyObj = {
         sleepTime :timeOfSleep.value,
         wakeUpTime: timeOfWake.value,
@@ -38,4 +39,4 @@ const addNewSleepEntry = async (e) => {
 };
 
 
-submit.addEventListener("submit", addNewSleepEntry);
+submit.addEventListener("click", addNewSleepEntry);

@@ -4,6 +4,7 @@
 }
 
 body {
+background-image: url ("https://blog-eca0.kxcdn.com/wp-content/uploads/2018/10/img_premium_dialog_white_bg-1024x694.png")
   background: #f6f5f7;
   	display: flex;
   	justify-content: center;
@@ -13,7 +14,12 @@ body {
   	height: 100vh;
   	margin: -20px 0 50px;
   }
-
+img{
+ position:absolute;
+    left:0px;
+    top:0px;
+    z-index:-1;
+ }
 
 .sleep-container {
   display: flex;

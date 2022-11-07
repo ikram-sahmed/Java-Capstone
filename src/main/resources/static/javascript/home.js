@@ -1,5 +1,5 @@
-//const cookieArr = document.cookie.split("=");
-//const userId = cookieArr[1];
+const cookieArr = document.cookie.split("=");
+const userId = cookieArr[1];
 
 const registerButton = document.getElementById("Register");
 const loginButton = document.getElementById("Login");
@@ -14,8 +14,7 @@ loginButton.addEventListener('click', () => {
 });
 
 const submitRegister = document.getElementById("RegisterForm");
-const submitLogin = document.getElementById ("LoginForm")
-
+const submitLogin = document.getElementById ("LoginForm");
 
 const registerUsername = document.getElementById("register-username")
 const registerPassword = document.getElementById("register-password")
@@ -56,6 +55,7 @@ const handleSubmitRegister = async (e) =>{
 
 const handleSubmitLogin = async (e) => {
     e.preventDefault()
+
     let bodyObj = {
         username: loginUsername.value,
         password: loginPassword.value
@@ -72,13 +72,13 @@ const handleSubmitLogin = async (e) => {
 
     if (response.status === 200){
         document.cookie = `userId=${responseArr[1]}`
-        window.location.replace(responseArr[0])
+        window.location.replace("http://localhost:8080/sleep.html")
     }
 
 }
+submitRegister.addEventListener("click", handleSubmitRegister);
+submitLogin.addEventListener("click", handleSubmitLogin);
 
-submitRegister.addEventListener("submit", handleSubmitRegister);
-submitLogin.addEventListener("submit", handleSubmitLogin);
 
 //document.getElementById('Register').addEventListener('click', function(){
 //    container.classList.add("right-panel-active");
