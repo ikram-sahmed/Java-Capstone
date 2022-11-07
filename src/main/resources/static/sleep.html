@@ -6,27 +6,28 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daily Sleep Tracker</title>
+    <link rel="stylesheet" href="./css/sleep.css" type="text/css">
+
 </head>
 <body>
 <h1>Hey! Let's track your sleep</h1>
-<form>
-    <ul>
-        <li>
-            <label for="time">Time Slept (hours):</label>
-            <input type="text" id="time" name="time">
-        </li>
-        <li>
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date"
-                   value="">
-        </li>
-        <li class = "button">
-            <input type="submit" name='submit' value='Submit'>
-            <input type="submit" name='graph' value='View Graph'>
-            <input type="submit" name='logout' value='Logout'>
-        </li>
-    </ul>
+
+<form class="form-container sleep-container" id="sleepForm">
+    <label for="sleepTime">Time of sleep:</label>
+    <input type="datetime-local" id="sleepTime" name="sleepTime">
+    <label for="wakeUpTime">Wake up time:</label>
+    <input type="datetime-local" id="wakeUpTime" name="wakeUpTime">
+    <label for="sleep-Duration">Sleep duration</label>
+    <input type="number" name="sleepDuration" id="sleep-Duration" min="0" max="24" required>
+    <button class="button" type="submit" id="submitSleep">Submit</button>
 </form>
 
+
+<div class="return-to-main-btn-container">
+    <p class="submission-message hidden" id="submissionMessage">New data logged</p>
+    <a href="./home.html" class="button" id="Logout">Logout</a>
+</div>
+
+<script src = "./javascript/sleep.js">type="application/javascript"></script>
 </body>
 </html>

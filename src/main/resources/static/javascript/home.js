@@ -1,6 +1,9 @@
-const registerButton = document.getElementById('Register');
-const loginButton = document.getElementById('Login');
-const container = document.getElementById('container');
+//const cookieArr = document.cookie.split("=");
+//const userId = cookieArr[1];
+
+const registerButton = document.getElementById("Register");
+const loginButton = document.getElementById("Login");
+const container = document.getElementById("container");
 
 registerButton.addEventListener('click', () => {
 	container.classList.add("right-panel-active");
@@ -10,10 +13,13 @@ loginButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
 });
 
+const submitRegister = document.getElementById("RegisterForm");
+const submitLogin = document.getElementById ("LoginForm")
 
-const registerUsername = document.getElementById('register-username')
-const registerPassword = document.getElementById('register-password')
-const registerEmail = document.getElementById ('email')
+
+const registerUsername = document.getElementById("register-username")
+const registerPassword = document.getElementById("register-password")
+const registerEmail = document.getElementById ("email")
 const loginUsername = document.getElementById("username");
 const loginPassword = document.getElementById("password");
 
@@ -25,7 +31,7 @@ const headers = {
 const baseUrl = 'http://localhost:8080/api/v1/users'
 
 
-const handleButtonRegister = async (e) =>{
+const handleSubmitRegister = async (e) =>{
     e.preventDefault()
 
     let bodyObj = {
@@ -48,7 +54,7 @@ const handleButtonRegister = async (e) =>{
     }
 }
 
-const handleButtonLogin = async (e) => {
+const handleSubmitLogin = async (e) => {
     e.preventDefault()
     let bodyObj = {
         username: loginUsername.value,
@@ -71,6 +77,11 @@ const handleButtonLogin = async (e) => {
 
 }
 
-registerButton.addEventListener("Register", handleButtonRegister)
-loginButton.addEventListener("Login", handleButtonLogin);
+submitRegister.addEventListener("submit", handleSubmitRegister);
+submitLogin.addEventListener("submit", handleSubmitLogin);
+
+//document.getElementById('Register').addEventListener('click', function(){
+//    container.classList.add("right-panel-active");
+//    handleButtonRegister("Register");
+//});
 
