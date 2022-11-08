@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Date;
 
 @Entity
 @Table (name = "Sleep")
@@ -38,13 +37,6 @@ public class Sleep {
         this.hoursOfSleep = hoursOfSleep;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     public Timestamp getSleepTime() {
         return sleepTime;
@@ -62,10 +54,9 @@ public class Sleep {
         this.wakeUpTime = wakeUpTime;
     }
 
-    public Sleep(Long sleepId, Long hoursOfSleep, Date date, Timestamp sleepTime, Timestamp wakeUpTime) {
+    public Sleep(Long sleepId, Long hoursOfSleep, Timestamp sleepTime, Timestamp wakeUpTime) {
         this.sleepId = sleepId;
         this.hoursOfSleep = hoursOfSleep;
-        this.date = date;
         this.sleepTime = sleepTime;
         this.wakeUpTime = wakeUpTime;
     }
@@ -74,8 +65,6 @@ public class Sleep {
     @Column
     private Long hoursOfSleep;
 
-    @Column
-    private Date date;
 
     @Column
     private Timestamp sleepTime;
@@ -94,9 +83,6 @@ public class Sleep {
         }
         if (sleepDto.getHoursOfSleep() != null) {
             this.hoursOfSleep = sleepDto.getHoursOfSleep();
-        }
-        if (sleepDto.getDate() != null) {
-            this.date = sleepDto.getDate();
         }
         if (sleepDto.getSleepTime() != null) {
           this.sleepTime = sleepDto.getSleepTime();

@@ -29,6 +29,7 @@ public class SleepServiceImpl implements SleepService {
         userOptional.ifPresent(sleep::setUser);
         sleepRepository.saveAndFlush(sleep);
     }
+
     @Override
     public List<SleepDto> getAllSleepByUserId(Long userId) {
             Optional<User> userOptional =userRepository.findById(userId);

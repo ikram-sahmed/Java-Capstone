@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Date;
+
 
 @Data
 @AllArgsConstructor
@@ -15,7 +15,6 @@ import java.util.Date;
 public class SleepDto implements Serializable {
     private Long sleepId;
     private Long hoursOfSleep;
-    private Date date;
     private Timestamp sleepTime;
     private Timestamp wakeUpTime;
     private UserDto userDto;
@@ -27,9 +26,7 @@ public class SleepDto implements Serializable {
         if (sleep.getHoursOfSleep() != null){
             this.hoursOfSleep = sleep.getHoursOfSleep();
         }
-        if (sleep.getDate() != null){
-            this.date = sleep.getDate();
-        }
+
        if (sleep.getSleepTime() != null) {
             this.sleepTime = sleep.getSleepTime();
      }

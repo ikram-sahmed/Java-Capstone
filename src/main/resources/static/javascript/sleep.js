@@ -1,6 +1,6 @@
 const timeOfSleep = document.getElementById("sleepTime");
 const timeOfWake = document.getElementById("wakeUpTime");
-const sleepDuration = document.getElementById("sleep-Duration");
+const sleepDuration = document.getElementById("sleepDuration");
 const submit = document.getElementById("submitSleep");
 
 
@@ -9,10 +9,16 @@ const headers = {
 }
 const baseUrl1 = "http://localhost:8080/api/v1/sleep"
 
-//let userId = (document.cookie.split('=')[1]);
-//userId = parseInt(userId);
+let userId = (document.cookie.split('=')[1]);
+userId = parseInt(userId);
 
-//function handleLogout(){
+function handleLogout(){
+    let c = document.cookie.split(";");
+    for(let i in c){
+        document.cookie = /^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
+    }
+    window.location.replace("http://localhost:8080/home.html");
+}
 
 
 const addNewSleepEntry = async (e) => {
@@ -21,7 +27,7 @@ const addNewSleepEntry = async (e) => {
     let bodyObj = {
         sleepTime :timeOfSleep.value,
         wakeUpTime: timeOfWake.value,
-        hoursOfSleep: sleepDuration
+        hoursOfSleep: sleepDuration.value,
     }
 
     const response = await fetch(`${baseUrl1}/user/${userId}`, {
@@ -29,10 +35,8 @@ const addNewSleepEntry = async (e) => {
         body: JSON.stringify(bodyObj),
         headers: headers
     })
-        .catch(err => console.error(err.message))
-    const responseArr = await response.json()
+       .catch(err => console.error(err.message))
 
-    console.log(responseArr);
     if (response.status === 200){
         window.location.reload();
         }
