@@ -9,21 +9,11 @@ const headers = {
 }
 const baseUrl1 = "http://localhost:8080/api/v1/sleep"
 
-let userId = (document.cookie.split('=')[1]);
-userId = parseInt(userId);
-
-function handleLogout(){
-    let c = document.cookie.split(";");
-    for(let i in c){
-        document.cookie = /^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
-    }
-    window.location.replace("http://localhost:8080/home.html");
-}
 
 
 const addNewSleepEntry = async (e) => {
     e.preventDefault()
-    console.log("hello")
+
     let bodyObj = {
         sleepTime :timeOfSleep.value,
         wakeUpTime: timeOfWake.value,
@@ -41,6 +31,16 @@ const addNewSleepEntry = async (e) => {
         window.location.reload();
         }
 };
+let userId = (document.cookie.split('=')[1]);
+userId = parseInt(userId);
+
+function handleLogout(){
+    let c = document.cookie.split(";");
+    for(let i in c){
+        document.cookie = /^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
+    }
+    window.location.replace("http://localhost:8080/home.html");
+}
 
 
 submit.addEventListener("click", addNewSleepEntry);

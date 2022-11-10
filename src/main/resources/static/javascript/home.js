@@ -80,8 +80,4 @@ submitRegister.addEventListener("click", handleSubmitRegister);
 submitLogin.addEventListener("click", handleSubmitLogin);
 
 
-//document.getElementById('Register').addEventListener('click', function(){
-//    container.classList.add("right-panel-active");
-//    handleButtonRegister("Register");
-//});
 
